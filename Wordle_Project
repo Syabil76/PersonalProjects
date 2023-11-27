@@ -1,0 +1,49 @@
+#WORK IN PROGRESS!!!
+
+#!/bin/python3
+
+#word list
+#make a 5 letter array
+#tell you which words are in there and which words are wrong
+#give six attempts
+
+import random
+player_guess = ['-','-','-','-','-']
+
+wordlist = ['whizz','pizza','joker']
+word = []
+string = random.choice(wordlist)
+for letter in string:
+    word.append(letter)
+#chooses word from wordlist and splits into characters
+
+Correct = 0
+Present = 0
+Wrong = 0
+
+while True:
+    guess = input('guess a 5 letter word!')
+    if len(guess) != 5:
+        print("out of range")
+
+    for i in range(5):
+        player_guess[i] = guess[i:i+1]
+    print(player_guess)
+    for i in range(5):
+        for j in range(5):
+            if player_guess[i] == word[j]:
+                print(f"{player_guess[i]} in position {j+1} is present")
+        if player_guess[i] == word[i]:
+            Correct = Correct + 1
+            print(f"{player_guess[i]} in position {i+1} is correct")
+            if Correct == 5:
+                print("you win!")
+                print(f"word was {string}")
+                break
+# for j in range(5):
+
+#     for k in range(5):
+#         if player_guess[j] == word[k]:
+#             print(f"{player_guess[k]} is present")
+
+
