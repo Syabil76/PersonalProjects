@@ -40,10 +40,6 @@ while True:
                 print("you win!")
                 print(f"word was {string}")
                 break
-# for j in range(5):
 
-#     for k in range(5):
-#         if player_guess[j] == word[k]:
-#             print(f"{player_guess[k]} is present")
 
 
