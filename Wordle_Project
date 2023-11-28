@@ -32,7 +32,7 @@ while True:
     for i in range(5):
         for j in range(5):
             if player_guess[i] == word[j]:
-                print(f"{player_guess[i]} in position {j+1} is present")
+                print(f"{player_guess[i]} is present")
         if player_guess[i] == word[i]:
             Correct = Correct + 1
             print(f"{player_guess[i]} in position {i+1} is correct")
