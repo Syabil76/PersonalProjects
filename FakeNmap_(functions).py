@@ -10,6 +10,7 @@ def create_devices(num_device):
     if num_device > 254:
         print("Too many devices! (254<)")
         return devices
+    print(" ")
     print(f"-----scanning started at {datetime.now()}-----")
     for i in range(0,num_device):
         device = dict()
@@ -18,6 +19,7 @@ def create_devices(num_device):
         + random.choice(['2F','57','PQ','SD','D0'])
         + random.choice(['2F','57','PQ','SD','D0'])
         )
+        device["vendor"] = random.choice(["Cisco", "Junpier", "Aruba", "BroadCom", "Netgear"])
         device["IP"] = (
         f"10.0.{str(random.randint(0,255))}.{str(random.randint(0,255))}"
         )
@@ -34,5 +36,9 @@ def create_devices(num_device):
 num_device = int(input("create how many devices?"))
 
 create_devices(num_device)
-for i in range(len(devices)):
-    print(devices[i])
+print("\n   NAME      VENDOR      IP ADDRESS       MAC ADDRESS")
+print("-"*55)
+for device in devices:
+    print(
+    f'{device["name"]:>7}{device["vendor"]:>12}{device["IP"]:>16}{device["MAC"]:>18}'
+    )
