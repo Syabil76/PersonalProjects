@@ -1,0 +1,6 @@
+A simple encrypt and decrypt program.
+Usage:
+go run . encrypt path/to/your/file 
+
+-en to encrypt
+-d to decrypt
