@@ -1,6 +1,9 @@
-A simple encrypt and decrypt program.
-Usage:
-go run . encrypt path/to/your/file 
 
--en to encrypt
--d to decrypt
+[------------------------------------------------------------]
+                        FILE ENCRYPTION
+                          [COMMANDS]
+--h: DISPLAYS help message relaying all commands
+-en: ENCRYPTS specified file. RETURNS ERROR if not detected
+-d: DECRYPTS specified file. RETURNS ERROR if not detected
+
+[------------------------------------------------------------]
