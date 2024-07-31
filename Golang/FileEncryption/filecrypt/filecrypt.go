@@ -95,28 +95,32 @@ func Decrypt(source string, password []byte) {
 	str := hex.EncodeToString(salt)
 	nonce, err := hex.DecodeString(str)
 
-	dk := pbkdf2.Key(name, nonce, 4096, 32, sha1.New())
+	dk := pbkdf2.Key(key, nonce, 4096, 32, sha1.New)
 	block, err := aes.NewCipher(dk)
 	if err != nil {
 		panic(err.Error())
 	}
-	
+
 	aesgcm, err := cipher.NewGCM(block)
 	if err != nil {
 		panic(err.Error())
 	}
 
 	//initialise plaintext as a decrypted ciphertext - 12 char as those are the nonce
-	plaintext, err := aesgcm.Open(nil, nonce, ciphertext,[:len(ciphertext)-12], nil)
+	plaintext, err := aesgcm.Open(nil, nonce, ciphertext[:len(ciphertext)-12], nil)
+	if err != nil {
+		panic(err.Error())
+	}
+
+	dstFile, err := os.Create(source)
 	if err != nil {
 		panic(err.Error())
 	}
 	defer dstFile.Close()
 
-	_, err := dstFile. Write(plaintext)
+	_, err = dstFile.Write(plaintext)
 	if err != nil {
 		panic(err.Error())
 	}
-
 
 }
