@@ -1,5 +1,8 @@
+// Comment for popup screen that shows what you want to write in the notes
+
 function popup() {
     const popupContainer = document.createElement("div");
+    // function creates new html lines of code that put in the notes written by user and prestyled in CSS script
     popupContainer.innerHTML = `
     <div id="popupContainer">
         <h1>New Note</h1>
@@ -13,6 +16,7 @@ function popup() {
     document.body.appendChild(popupContainer);
 }
 
+// popup wont go away unless function called
 function closePopup() {
     const popupContainer = document.getElementById("popupContainer");
     if(popupContainer) {
