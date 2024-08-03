@@ -26,6 +26,7 @@ It's a very basic example using cars, but can realistically be done with things 
   ![postman](https://voyager.postman.com/illustration/rest-client/rest-client-send-and-save-postman.png)
 ## Errors and known issues
   No comments- code hard to read if unfamiliar.\
+  No go.mod and go.sum file.\
   Nil.
 ## Libraries used
   - "encoding/json" --> to update (generally) JSON files.
