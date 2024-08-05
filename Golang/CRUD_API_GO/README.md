@@ -22,8 +22,22 @@ It's a very basic example using cars, but can realistically be done with things 
   The routes and functions show the workings of the program- very straightforward.\
   The endpoints show where the data is actually being updated and specified by ID, sort of like a primary key.\
   The methods show what operation is used by postman/API to actually update data.
-  ![image](https://github.com/Syabil76/PersonalProjects/blob/main/Golang/CRUD_API_GO/Logic.png?raw=true)
+  ![image](https://github.com/Syabil76/PersonalProjects/blob/main/Golang/CRUD_API_GO/images/Logic.png?raw=true)
   ![postman](https://voyager.postman.com/illustration/rest-client/rest-client-send-and-save-postman.png)
+## Usage
+Usage is relatively simple, run the program in your CLI (1) and make sure your port is set to 8000. After that go to postman and
+remember to use their agent otherwise it wont be able to connect to your network, or just download the app (2).\
+\
+Create your files where you want to put all your functions (3) and set the connection to http://localhost:8000/whateveryouput (in my case, cars). 
+make sure to set the correct method eg. GET for READ and POST for CREATE (4).\
+\
+Have fun! (5)\
+
+1. ![cli](https://github.com/Syabil76/PersonalProjects/blob/main/Golang/CRUD_API_GO/images/CLI.png)
+2. ![postman2](https://github.com/Syabil76/PersonalProjects/blob/main/Golang/CRUD_API_GO/images/postman.png)
+3. ![getall](https://github.com/Syabil76/PersonalProjects/blob/main/Golang/CRUD_API_GO/images/getall.png)
+4. ![getbyid](https://github.com/Syabil76/PersonalProjects/blob/main/Golang/CRUD_API_GO/images/getbyid.png)
+5. ![good](https://www.pngall.com/wp-content/uploads/14/Thumbs-Up-Emoji-PNG-Image.png)
 ## Errors and known issues
   No comments- code hard to read if unfamiliar.\
   No go.mod and go.sum file.\
