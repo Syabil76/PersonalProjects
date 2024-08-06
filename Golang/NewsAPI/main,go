@@ -1,0 +1,68 @@
+package main
+
+import (
+	"bufio"
+	"fmt"
+	"io"
+	"net/http"
+	"os"
+	"strings"
+)
+
+type News struct {
+	Source struct {
+		ID   string `json:"id"`
+		Name string `json:"name"`
+	} `json:"source"`
+
+	Author      string `json:"author"`
+	Title       string `json:"title"`
+	Description string `json:"description"`
+	URL         string `json:"url"`
+	Published   string `json:"publishedAt"`
+}
+
+func main() {
+	gettarget()
+	getdate()
+	url := "https://newsapi.org/v2/everything?q=" + target + "&from=" + date + "&sortBy=popularity&apiKey=549b39b8e6a1469f9ead2c4b087ccfbc"
+
+	res, err := http.Get(url)
+	if err != nil {
+		panic(err)
+	}
+
+	if res.StatusCode != 200 {
+		panic("asdsa")
+	}
+	defer res.Body.Close()
+
+	Body, err := io.ReadAll(res.Body)
+	if err != nil {
+		panic(err)
+	}
+
+	
+	fmt.Println(string(Body))
+
+}
+
+func getInput(prompt string, r *bufio.Reader) (string, error) {
+	fmt.Print(prompt)
+	input, err := r.ReadString('\n')
+
+	return strings.TrimSpace(input), err
+}
+
+func gettarget() {
+	reader := bufio.NewReader(os.Stdin)
+
+	getInput("Enter a news topic e.g Tesla: ", reader)
+}
+
+func getdate() {
+	reader := bufio.NewReader(os.Stdin)
+
+	date, _ := getInput("Enter date with format YYYY-MM-DD: ", reader)
+	d := date
+}
