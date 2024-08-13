@@ -1,1 +1,18 @@
-
+.Header {
+    background-color: aqua;
+    color: white;
+    margin: 0;
+    width: 100%;
+    padding: 10px;
+    text-align: center;
+    font-size: 30px;
+    h1 {
+        margin: 0;
+        padding: 0;
+    }
+    img {
+        width: 30%;
+        height: 30%;
+        text-align: center;
+    }
+}
